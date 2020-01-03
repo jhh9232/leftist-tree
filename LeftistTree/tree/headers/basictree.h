@@ -3,16 +3,19 @@
 
 #include "../../linkedlist/headers/linkedlist.h"
 
-typedef struct treenode tree;
+typedef struct treenode btree;
 
 struct treenode
 {
-	tree* parent;
-	tree* left;
-	tree* right;
+	btree* parent;
+	btree* left;
+	btree* right;
 
 	char* key;
 	lnklist value;
+	int nodecnt;
 };
+
+void tree_init(btree**);
 
 #endif // !BASIC_TREE_H

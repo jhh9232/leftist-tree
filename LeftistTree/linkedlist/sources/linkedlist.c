@@ -2,6 +2,8 @@
 
 void list_create(lnklist** list)
 {
+	if (*list)
+		return;
 	(*list) = (lnklist*)malloc(sizeof(lnklist));
 	(*list)->head = NULL;
 	(*list)->tail = NULL;
@@ -10,6 +12,8 @@ void list_create(lnklist** list)
 
 void list_create_node(lnknode** lst, int value)
 {
+	if (*lst)
+		return;
 	(*lst) = (lnknode*)malloc(sizeof(lnknode));
 	(*lst)->data = value;
 	(*lst)->next = NULL;
