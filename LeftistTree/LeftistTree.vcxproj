@@ -80,16 +80,20 @@
     <RemoteLdToolExe>gcc</RemoteLdToolExe>
   </PropertyGroup>
   <ItemGroup>
-    <ClCompile Include="linkedlist\sources\linkedlist.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="stack\sources\basicstack.c" />
     <ClCompile Include="tree\sources\basictree.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="linkedlist\headers\linkedlist.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="stack\headers\basicstack.h" />
     <ClInclude Include="tree\headers\basictree.h" />
   </ItemGroup>
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <CLanguageStandard>gnu11</CLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>

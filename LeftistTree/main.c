@@ -1,23 +1,20 @@
-#include "./tree/headers/basictree.h"
+#include "./stack/headers/basicstack.h"
 
 int main()
 {
-	printf("Hello World!!\n");
-	lnklist* list = NULL;
-	list_create(&list);
-	list_add_sort(&list, 5);
-	list_add_sort(&list, 3);
-	list_add_sort(&list, 7);
-	list_add_sort(&list, 4);
-	list_add_sort(&list, 6);
-	list_print(list);
-	int result = *(int*)list_get_value(list, 5);
-	printf("result = %d\n", result);
-	list_del_node(&list, 4);
-	list_del_node(&list, 6);
-	list_print(list);
-	list_destroy(&list);
-	list_print(list);
+	btree* tree = NULL;
+
+	tree_insert(&tree, 1);
+	tree_print(tree);
+	tree_insert(&tree, 2);
+	tree_insert(&tree, 3);
+	//tree_insert(&tree, 0);
+	tree_print(tree);
+	printf("\nmin-value : %d\n", tree->data);
+	tree_delete_min(&tree);
+	tree_print(tree);
+	tree_destroy(&tree);
+	printf("\n");
 	return 0;
 }
 
